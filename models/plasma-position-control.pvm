@@ -11,7 +11,7 @@
         "id": "d4000001-0001-4000-8000-000000000001",
         "type": "Constant",
         "name": "z_ref",
-        "position": { "x": -300, "y": 400 },
+        "position": { "x": -500, "y": 400 },
         "inputs": [],
         "outputs": [
           {
@@ -30,7 +30,7 @@
         "id": "d4000001-0001-4000-8000-000000000002",
         "type": "Adder",
         "name": "error",
-        "position": { "x": -180, "y": 400 },
+        "position": { "x": -300, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000002-input-0",
@@ -65,7 +65,7 @@
         "id": "d4000001-0001-4000-8000-000000000003",
         "type": "PID",
         "name": "PID",
-        "position": { "x": -60, "y": 400 },
+        "position": { "x": -100, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000003-input-0",
@@ -93,7 +93,7 @@
         "id": "d4000001-0001-4000-8000-000000000004",
         "type": "Amplifier",
         "name": "coil L/R",
-        "position": { "x": 60, "y": 400 },
+        "position": { "x": 100, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000004-input-0",
@@ -121,7 +121,7 @@
         "id": "d4000001-0001-4000-8000-000000000005",
         "type": "Source",
         "name": "ELM kick",
-        "position": { "x": 220, "y": 310 },
+        "position": { "x": 400, "y": 280 },
         "inputs": [],
         "outputs": [
           {
@@ -140,7 +140,7 @@
         "id": "d4000001-0001-4000-8000-000000000006",
         "type": "Amplifier",
         "name": "instability",
-        "position": { "x": 340, "y": 470 },
+        "position": { "x": 650, "y": 520 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000006-input-0",
@@ -168,7 +168,7 @@
         "id": "d4000001-0001-4000-8000-000000000007",
         "type": "Adder",
         "name": "forces",
-        "position": { "x": 220, "y": 400 },
+        "position": { "x": 400, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000007-input-0",
@@ -212,7 +212,7 @@
         "id": "d4000001-0001-4000-8000-000000000008",
         "type": "Amplifier",
         "name": "1/m",
-        "position": { "x": 340, "y": 400 },
+        "position": { "x": 600, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000008-input-0",
@@ -240,7 +240,7 @@
         "id": "d4000001-0001-4000-8000-000000000009",
         "type": "Integrator",
         "name": "velocity",
-        "position": { "x": 460, "y": 400 },
+        "position": { "x": 800, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000009-input-0",
@@ -268,7 +268,7 @@
         "id": "d4000001-0001-4000-8000-000000000010",
         "type": "Integrator",
         "name": "position z",
-        "position": { "x": 580, "y": 400 },
+        "position": { "x": 1000, "y": 400 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000010-input-0",
@@ -296,7 +296,7 @@
         "id": "d4000001-0001-4000-8000-000000000011",
         "type": "Scope",
         "name": "results",
-        "position": { "x": 720, "y": 370 },
+        "position": { "x": 1200, "y": 370 },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000011-input-0",
@@ -430,7 +430,7 @@
     "annotations": [
       {
         "id": "f4000001-0001-4000-8000-000000000001",
-        "position": { "x": -350, "y": 500 },
+        "position": { "x": -550, "y": 570 },
         "content": "# Plasma Vertical Position Control\n\nThe plasma column is vertically **unstable** (positive feedback from elongation).\nA PID controller drives the vertical field coils to stabilize position.\nELM-like disturbance kicks test the controller's response.\n\nTry increasing `n_index` to make the instability stronger.",
         "width": 550,
         "height": 80,
