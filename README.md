@@ -53,10 +53,10 @@ Open these directly in the browser — no installation needed:
 
 | Model | Open in PathView |
 |-------|-----------------|
-| Harmonic Oscillator | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/harmonic-oscillator.pvm) |
-| PID Control | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/pid-control.pvm) |
-| Tritium Fuel Cycle | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/tritium-fuel-cycle.pvm) |
-| Plasma Position Control | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/plasma-position-control.pvm) |
+| Harmonic Oscillator | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/harmonic-oscillator.pvm) |
+| PID Control | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/pid-control.pvm) |
+| Tritium Fuel Cycle | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/tritium-fuel-cycle.pvm) |
+| Plasma Position Control | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/plasma-position-control.pvm) |
 
 ### ARC Fusion Reactor Fuel Cycle Models
 
@@ -64,11 +64,11 @@ Tritium fuel cycle models of the ARC reactor (MIT PSFC), built with PathView:
 
 | Model | Open in PathView |
 |-------|-----------------|
-| ARC Single BCR | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/arc_single_bcr.pvm) |
-| ARC Single BCR Shutdown | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/arc_single_bcr_shutdown.pvm) |
-| ARC Series BCR | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/arc_series_bcr.pvm) |
-| ARC Parallel BCR Shutdown | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/arc_parallel_bcr_shutdown.pvm) |
-| ARC (Meschini config) | [Open](https://view.pathsim.org/?modelgh=milanofthe/ossfe-2026-tutorial/models/arc_same_as_meschini.pvm) |
+| ARC Single BCR | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/arc_single_bcr.pvm) |
+| ARC Single BCR Shutdown | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/arc_single_bcr_shutdown.pvm) |
+| ARC Series BCR | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/arc_series_bcr.pvm) |
+| ARC Parallel BCR Shutdown | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/arc_parallel_bcr_shutdown.pvm) |
+| ARC (Meschini config) | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/arc_same_as_meschini.pvm) |
 
 ## Links
 
