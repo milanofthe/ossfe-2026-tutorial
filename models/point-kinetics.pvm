@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created": "2026-03-08T14:00:00.000Z",
+    "modified": "2026-03-08T14:00:00.000Z",
+    "name": "point-kinetics"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "e5000001-0001-4000-8000-000000000001",
+        "type": "Source",
+        "name": "reactivity",
+        "position": { "x": -400, "y": 400 },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "e5000001-0001-4000-8000-000000000001-output-0",
+            "nodeId": "e5000001-0001-4000-8000-000000000001",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": { "func": "rho_input" },
+        "color": "#EF5350"
+      },
+      {
+        "id": "e5000001-0001-4000-8000-000000000002",
+        "type": "Constant",
+        "name": "no source",
+        "position": { "x": -400, "y": 480 },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "e5000001-0001-4000-8000-000000000002-output-0",
+            "nodeId": "e5000001-0001-4000-8000-000000000002",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": { "value": "0" }
+      },
+      {
+        "id": "e5000001-0001-4000-8000-000000000003",
+        "type": "PointKinetics",
+        "name": "reactor",
+        "position": { "x": -50, "y": 400 },
+        "inputs": [
+          {
+            "id": "e5000001-0001-4000-8000-000000000003-input-0",
+            "nodeId": "e5000001-0001-4000-8000-000000000003",
+            "name": "rho",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          },
+          {
+            "id": "e5000001-0001-4000-8000-000000000003-input-1",
+            "nodeId": "e5000001-0001-4000-8000-000000000003",
+            "name": "S",
+            "direction": "input",
+            "index": 1,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "e5000001-0001-4000-8000-000000000003-output-0",
+            "nodeId": "e5000001-0001-4000-8000-000000000003",
+            "name": "n",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": { "n0": "1.0", "Lambda": "1e-5" },
+        "color": "#7E57C2"
+      },
+      {
+        "id": "e5000001-0001-4000-8000-000000000004",
+        "type": "Scope",
+        "name": "neutron density",
+        "position": { "x": 300, "y": 390 },
+        "inputs": [
+          {
+            "id": "e5000001-0001-4000-8000-000000000004-input-0",
+            "nodeId": "e5000001-0001-4000-8000-000000000004",
+            "name": "n(t)",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": { "labels": "[\"n(t)\"]" }
+      }
+    ],
+    "connections": [
+      {
+        "id": "f5000001-0001-4000-8000-000000000001",
+        "sourceNodeId": "e5000001-0001-4000-8000-000000000001",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e5000001-0001-4000-8000-000000000003",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "f5000001-0001-4000-8000-000000000002",
+        "sourceNodeId": "e5000001-0001-4000-8000-000000000002",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e5000001-0001-4000-8000-000000000003",
+        "targetPortIndex": 1
+      },
+      {
+        "id": "f5000001-0001-4000-8000-000000000003",
+        "sourceNodeId": "e5000001-0001-4000-8000-000000000003",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e5000001-0001-4000-8000-000000000004",
+        "targetPortIndex": 0
+      }
+    ],
+    "annotations": [
+      {
+        "id": "g5000001-0001-4000-8000-000000000001",
+        "position": { "x": -450, "y": 550 },
+        "content": "# Reactor Point Kinetics\n\nNeutron population dynamics with 6 delayed precursor groups.\n\n**Try:** Change `rho_step` in the code editor (E).\n- `rho = 0.003` → delayed supercritical (slow rise)\n- `rho = 0.008` → prompt supercritical (rapid excursion!)\n- `rho = -0.01` → subcritical (decay)",
+        "width": 500,
+        "height": 100,
+        "fontSize": 11
+      }
+    ]
+  },
+  "events": [],
+  "codeContext": {
+    "code": "# reactivity step [unitless]\n# beta ~ 0.0065, so:\n#   rho < beta  -> delayed supercritical (safe)\n#   rho > beta  -> prompt supercritical (dangerous!)\n#   rho < 0     -> subcritical\nrho_step = 0.003\n\ndef rho_input(t):\n    if t > 0.1:\n        return rho_step\n    return 0.0"
+  },
+  "simulationSettings": {
+    "duration": "100",
+    "dt": "0.01",
+    "solver": "GEAR52A",
+    "adaptive": true,
+    "atol": "",
+    "rtol": "",
+    "ftol": "1e-6",
+    "dt_min": "",
+    "dt_max": "",
+    "ghostTraces": 0,
+    "plotResults": true
+  }
+}

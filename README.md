@@ -60,6 +60,9 @@ Open these directly in the browser — no installation needed:
 | PID Control | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/pid-control.pvm) |
 | Tritium Fuel Cycle | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/tritium-fuel-cycle.pvm) |
 | Plasma Position Control | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/plasma-position-control.pvm) |
+| Point Kinetics | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/point-kinetics.pvm) |
+| Plasma Power Balance | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/plasma-power-balance.pvm) |
+| Coolant Loop | [Open](https://view.pathsim.org/?model=https://raw.githubusercontent.com/milanofthe/ossfe-2026-tutorial/main/models/coolant-loop.pvm) |
 
 ### ARC Fusion Reactor Fuel Cycle Models
 

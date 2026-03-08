@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created": "2026-03-08T14:00:00.000Z",
+    "modified": "2026-03-08T14:00:00.000Z",
+    "name": "plasma-power-balance"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "e6000001-0001-4000-8000-000000000001",
+        "type": "Source",
+        "name": "P_heating",
+        "position": { "x": -400, "y": 400 },
+        "inputs": [],
+        "outputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000001-output-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000001",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": { "func": "heating_power" },
+        "color": "#EF5350"
+      },
+      {
+        "id": "e6000001-0001-4000-8000-000000000002",
+        "type": "ODE",
+        "name": "plasma",
+        "position": { "x": -50, "y": 400 },
+        "inputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000002-input-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000002",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000002-output-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000002",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "func": "power_balance",
+          "initial_value": "[T0]"
+        },
+        "color": "#EF5350"
+      },
+      {
+        "id": "e6000001-0001-4000-8000-000000000003",
+        "type": "Scope",
+        "name": "temperature",
+        "position": { "x": 300, "y": 370 },
+        "inputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000003-input-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000003",
+            "name": "T [keV]",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          },
+          {
+            "id": "e6000001-0001-4000-8000-000000000003-input-1",
+            "nodeId": "e6000001-0001-4000-8000-000000000003",
+            "name": "P_heat [MW]",
+            "direction": "input",
+            "index": 1,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": { "labels": "[\"T [keV]\", \"P_heat [MW]\"]" }
+      },
+      {
+        "id": "e6000001-0001-4000-8000-000000000004",
+        "type": "Amplifier",
+        "name": "W to MW",
+        "position": { "x": -50, "y": 300 },
+        "inputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000004-input-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000004",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "e6000001-0001-4000-8000-000000000004-output-0",
+            "nodeId": "e6000001-0001-4000-8000-000000000004",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": { "gain": "1e-6" }
+      }
+    ],
+    "connections": [
+      {
+        "id": "f6000001-0001-4000-8000-000000000001",
+        "sourceNodeId": "e6000001-0001-4000-8000-000000000001",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e6000001-0001-4000-8000-000000000002",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "f6000001-0001-4000-8000-000000000002",
+        "sourceNodeId": "e6000001-0001-4000-8000-000000000002",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e6000001-0001-4000-8000-000000000003",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "f6000001-0001-4000-8000-000000000003",
+        "sourceNodeId": "e6000001-0001-4000-8000-000000000001",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e6000001-0001-4000-8000-000000000004",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "f6000001-0001-4000-8000-000000000004",
+        "sourceNodeId": "e6000001-0001-4000-8000-000000000004",
+        "sourcePortIndex": 0,
+        "targetNodeId": "e6000001-0001-4000-8000-000000000003",
+        "targetPortIndex": 1
+      }
+    ],
+    "annotations": [
+      {
+        "id": "g6000001-0001-4000-8000-000000000001",
+        "position": { "x": -500, "y": 530 },
+        "content": "# Plasma Power Balance (0D)\n\nSimplified tokamak energy balance:\n$$\\frac{3}{2} n V \\frac{dT}{dt} = P_{heat} - P_{loss}$$\n\nwhere $P_{loss} = \\frac{3/2 \\, n V T}{\\tau_E}$ and $\\tau_E = C \\cdot T^\\alpha$.\n\nTry changing `P_nbi` or `C_tau` to see how confinement affects burn.",
+        "width": 550,
+        "height": 100,
+        "fontSize": 11
+      }
+    ]
+  },
+  "events": [],
+  "codeContext": {
+    "code": "import numpy as np\n\n# plasma parameters\nn_e = 1e20       # electron density [m^-3]\nV = 30.0         # plasma volume [m^3]\nC_tau = 0.05     # confinement scaling [s/keV^alpha]\nalpha = 1.0      # scaling exponent\n\n# heating\nP_ohmic_0 = 2e6  # initial ohmic power [W]\nP_nbi = 10e6     # NBI heating [W]\n\n# thermal coefficient\ne_charge = 1.602e-19\nthermal_coeff = 1.5 * n_e * V * e_charge * 1e-3\n\n# initial temperature\nT0 = 0.1  # keV\n\ndef heating_power(t):\n    P_ohm = P_ohmic_0 / (1 + t * 0.5)\n    P_nbi_t = P_nbi if t > 1 else P_nbi * t\n    return P_ohm + P_nbi_t\n\ndef power_balance(x, u, t):\n    T = max(x[0], 0.01)\n    P_total = u[0]\n    tau_E = C_tau * T**alpha\n    P_loss = thermal_coeff * T / tau_E\n    dT_dt = (P_total - P_loss) / thermal_coeff\n    return np.array([dT_dt])"
+  },
+  "simulationSettings": {
+    "duration": "20",
+    "dt": "0.1",
+    "solver": "RKCK54",
+    "adaptive": true,
+    "atol": "",
+    "rtol": "",
+    "ftol": "",
+    "dt_min": "",
+    "dt_max": "",
+    "ghostTraces": 0,
+    "plotResults": true
+  }
+}
