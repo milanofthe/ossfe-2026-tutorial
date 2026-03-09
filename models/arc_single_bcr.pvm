@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-02-17T21:07:03.970Z",
-    "modified": "2026-02-17T21:07:03.970Z",
+    "created": "2026-03-09T08:37:36.746Z",
+    "modified": "2026-03-09T08:37:36.746Z",
     "name": "arc_single_bcr"
   },
   "graph": {
@@ -34,7 +34,7 @@
           "t_fall": "pulse_duration * 0.01",
           "_rotation": 1
         },
-        "color": "#FFFFFF"
+        "color": "#BA68C8"
       },
       {
         "id": "b42c9218-29fa-4504-a664-2e7e4eb6e98f",

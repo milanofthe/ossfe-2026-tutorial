@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-08T12:00:00.000Z",
-    "modified": "2026-03-08T12:00:00.000Z",
+    "created": "2026-03-09T08:18:22.776Z",
+    "modified": "2026-03-09T08:18:22.776Z",
     "name": "tritium-fuel-cycle"
   },
   "graph": {
@@ -11,7 +11,10 @@
         "id": "c3000001-0001-4000-8000-000000000001",
         "type": "Constant",
         "name": "fueling",
-        "position": { "x": -500, "y": 300 },
+        "position": {
+          "x": -220,
+          "y": 80
+        },
         "inputs": [],
         "outputs": [
           {
@@ -23,14 +26,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "value": "fueling_rate" },
-        "color": "#64B5F6"
+        "params": {
+          "value": "fueling_rate",
+          "_rotation": 1
+        },
+        "color": "#4DD0E1"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000002",
         "type": "Amplifier",
         "name": "burn",
-        "position": { "x": -100, "y": 200 },
+        "position": {
+          "x": -140,
+          "y": 170
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000002-input-0",
@@ -51,14 +60,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "burn_fraction" },
-        "color": "#EF5350"
+        "params": {
+          "gain": "burn_fraction"
+        },
+        "color": "#E57373"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000003",
         "type": "Amplifier",
         "name": "exhaust",
-        "position": { "x": -100, "y": 400 },
+        "position": {
+          "x": -20,
+          "y": 370
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000003-input-0",
@@ -79,14 +93,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "1 - burn_fraction" },
+        "params": {
+          "gain": "1 - burn_fraction"
+        },
         "color": "#FFA726"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000004",
         "type": "Amplifier",
         "name": "breeding (TBR)",
-        "position": { "x": 200, "y": 200 },
+        "position": {
+          "x": 0,
+          "y": 170
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000004-input-0",
@@ -107,14 +126,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "TBR" },
+        "params": {
+          "gain": "TBR"
+        },
         "color": "#81C784"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000005",
         "type": "Integrator",
         "name": "blanket",
-        "position": { "x": 550, "y": 200 },
+        "position": {
+          "x": 280,
+          "y": 180
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000005-input-0",
@@ -135,14 +159,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "initial_value": "0" },
+        "params": {
+          "initial_value": "0"
+        },
         "color": "#81C784"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000006",
         "type": "Amplifier",
         "name": "blanket drain",
-        "position": { "x": 550, "y": 300 },
+        "position": {
+          "x": 410,
+          "y": 180
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000006-input-0",
@@ -163,14 +192,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "_rotation": 2, "gain": "1/tau_blanket" },
+        "params": {
+          "_rotation": 0,
+          "gain": "1/tau_blanket"
+        },
         "color": "#81C784"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000007",
         "type": "Adder",
         "name": "blanket sum",
-        "position": { "x": 400, "y": 200 },
+        "position": {
+          "x": 150,
+          "y": 180
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000007-input-0",
@@ -199,14 +234,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "operations": "\"+-\"" },
+        "params": {
+          "operations": "\"+-\""
+        },
         "color": "#81C784"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000008",
         "type": "Integrator",
         "name": "exhaust tank",
-        "position": { "x": 250, "y": 400 },
+        "position": {
+          "x": 250,
+          "y": 380
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000008-input-0",
@@ -227,14 +267,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "initial_value": "0" },
+        "params": {
+          "initial_value": "0"
+        },
         "color": "#FFA726"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000009",
         "type": "Amplifier",
         "name": "exhaust drain",
-        "position": { "x": 250, "y": 500 },
+        "position": {
+          "x": 390,
+          "y": 380
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000009-input-0",
@@ -255,14 +300,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "_rotation": 2, "gain": "1/tau_exhaust" },
+        "params": {
+          "_rotation": 0,
+          "gain": "1/tau_exhaust"
+        },
         "color": "#FFA726"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000010",
         "type": "Adder",
         "name": "exhaust sum",
-        "position": { "x": 80, "y": 400 },
+        "position": {
+          "x": 110,
+          "y": 380
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000010-input-0",
@@ -291,14 +342,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "operations": "\"+-\"" },
+        "params": {
+          "operations": "\"+-\""
+        },
         "color": "#FFA726"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000011",
         "type": "Amplifier",
         "name": "recovery",
-        "position": { "x": 500, "y": 400 },
+        "position": {
+          "x": 520,
+          "y": 380
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000011-input-0",
@@ -319,14 +375,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "recovery_eff" },
+        "params": {
+          "gain": "recovery_eff"
+        },
         "color": "#FFA726"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000012",
         "type": "Adder",
         "name": "to storage",
-        "position": { "x": 750, "y": 300 },
+        "position": {
+          "x": -200,
+          "y": 530
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000012-input-0",
@@ -363,14 +424,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "operations": "\"++-\"" },
-        "color": "#7E57C2"
+        "params": {
+          "operations": "\"++-\"",
+          "_rotation": 1
+        },
+        "color": "#BA68C8"
       },
       {
         "id": "c3000001-0001-4000-8000-000000000013",
         "type": "Integrator",
         "name": "storage",
-        "position": { "x": 950, "y": 300 },
+        "position": {
+          "x": -80,
+          "y": 580
+        },
         "inputs": [
           {
             "id": "c3000001-0001-4000-8000-000000000013-input-0",
@@ -391,42 +458,80 @@
             "color": "#969696"
           }
         ],
-        "params": { "initial_value": "T0_storage" },
-        "color": "#7E57C2"
+        "params": {
+          "initial_value": "T0_storage",
+          "_rotation": 0
+        },
+        "color": "#BA68C8"
       },
       {
-        "id": "c3000001-0001-4000-8000-000000000014",
+        "id": "c2f15f36-a0a2-4887-9bdb-3e1d0b25290e",
         "type": "Scope",
-        "name": "results",
-        "position": { "x": 1150, "y": 270 },
+        "name": "storage",
+        "position": {
+          "x": 40,
+          "y": 580
+        },
         "inputs": [
           {
-            "id": "c3000001-0001-4000-8000-000000000014-input-0",
-            "nodeId": "c3000001-0001-4000-8000-000000000014",
-            "name": "storage",
+            "id": "c2f15f36-a0a2-4887-9bdb-3e1d0b25290e-input-0",
+            "nodeId": "c2f15f36-a0a2-4887-9bdb-3e1d0b25290e",
+            "name": "storage [g]",
             "direction": "input",
             "index": 0,
-            "color": "#969696"
-          },
-          {
-            "id": "c3000001-0001-4000-8000-000000000014-input-1",
-            "nodeId": "c3000001-0001-4000-8000-000000000014",
-            "name": "exhaust",
-            "direction": "input",
-            "index": 1,
-            "color": "#969696"
-          },
-          {
-            "id": "c3000001-0001-4000-8000-000000000014-input-2",
-            "nodeId": "c3000001-0001-4000-8000-000000000014",
-            "name": "blanket",
-            "direction": "input",
-            "index": 2,
             "color": "#969696"
           }
         ],
         "outputs": [],
-        "params": { "labels": "[\"storage [g]\", \"exhaust [g]\", \"blanket [g]\"]" }
+        "params": {
+          "labels": "[\"storage [g]\"]"
+        }
+      },
+      {
+        "id": "af96bcf2-9634-4039-88d6-3dd2376ac9a0",
+        "type": "Scope",
+        "name": "exhaust",
+        "position": {
+          "x": 400,
+          "y": 300
+        },
+        "inputs": [
+          {
+            "id": "af96bcf2-9634-4039-88d6-3dd2376ac9a0-input-0",
+            "nodeId": "af96bcf2-9634-4039-88d6-3dd2376ac9a0",
+            "name": "exhaust [g]",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"exhaust [g]\"]"
+        }
+      },
+      {
+        "id": "a4d4acb1-5328-4804-869c-68ab0aa816bc",
+        "type": "Scope",
+        "name": "blanket",
+        "position": {
+          "x": 420,
+          "y": 100
+        },
+        "inputs": [
+          {
+            "id": "a4d4acb1-5328-4804-869c-68ab0aa816bc-input-0",
+            "nodeId": "a4d4acb1-5328-4804-869c-68ab0aa816bc",
+            "name": "blanket[g]",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"blanket[g]\"]"
+        }
       }
     ],
     "connections": [
@@ -443,13 +548,6 @@
         "sourcePortIndex": 0,
         "targetNodeId": "c3000001-0001-4000-8000-000000000003",
         "targetPortIndex": 0
-      },
-      {
-        "id": "e3000001-0001-4000-8000-000000000003",
-        "sourceNodeId": "c3000001-0001-4000-8000-000000000001",
-        "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
-        "targetPortIndex": 2
       },
       {
         "id": "e3000001-0001-4000-8000-000000000004",
@@ -487,13 +585,6 @@
         "targetPortIndex": 1
       },
       {
-        "id": "e3000001-0001-4000-8000-000000000009",
-        "sourceNodeId": "c3000001-0001-4000-8000-000000000006",
-        "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
-        "targetPortIndex": 0
-      },
-      {
         "id": "e3000001-0001-4000-8000-000000000010",
         "sourceNodeId": "c3000001-0001-4000-8000-000000000003",
         "sourcePortIndex": 0,
@@ -529,13 +620,6 @@
         "targetPortIndex": 0
       },
       {
-        "id": "e3000001-0001-4000-8000-000000000015",
-        "sourceNodeId": "c3000001-0001-4000-8000-000000000011",
-        "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
-        "targetPortIndex": 1
-      },
-      {
         "id": "e3000001-0001-4000-8000-000000000016",
         "sourceNodeId": "c3000001-0001-4000-8000-000000000012",
         "sourcePortIndex": 0,
@@ -543,35 +627,123 @@
         "targetPortIndex": 0
       },
       {
-        "id": "e3000001-0001-4000-8000-000000000017",
+        "id": "e2bac057-9b51-4200-9e00-7abcd52c8d17",
         "sourceNodeId": "c3000001-0001-4000-8000-000000000013",
         "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000014",
+        "targetNodeId": "c2f15f36-a0a2-4887-9bdb-3e1d0b25290e",
         "targetPortIndex": 0
       },
       {
-        "id": "e3000001-0001-4000-8000-000000000018",
+        "id": "aa0b75c5-1f62-45c8-aa27-12e7d3f120aa",
         "sourceNodeId": "c3000001-0001-4000-8000-000000000008",
         "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000014",
-        "targetPortIndex": 1
+        "targetNodeId": "af96bcf2-9634-4039-88d6-3dd2376ac9a0",
+        "targetPortIndex": 0
       },
       {
-        "id": "e3000001-0001-4000-8000-000000000019",
+        "id": "605ab345-c0cc-454f-bedb-940c479c23ee",
         "sourceNodeId": "c3000001-0001-4000-8000-000000000005",
         "sourcePortIndex": 0,
-        "targetNodeId": "c3000001-0001-4000-8000-000000000014",
-        "targetPortIndex": 2
+        "targetNodeId": "a4d4acb1-5328-4804-869c-68ab0aa816bc",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "bb80cf61-29c5-4cec-928b-15fa272cd45c",
+        "sourceNodeId": "c3000001-0001-4000-8000-000000000001",
+        "sourcePortIndex": 0,
+        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "82d19409-4757-483a-9451-69b07b5f313f",
+        "sourceNodeId": "c3000001-0001-4000-8000-000000000011",
+        "sourcePortIndex": 0,
+        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
+        "targetPortIndex": 1,
+        "waypoints": [
+          {
+            "id": "96d5bbab-20a8-4a7a-b0d2-75a823263a81",
+            "position": {
+              "x": 280,
+              "y": 440
+            },
+            "isUserWaypoint": true
+          }
+        ]
+      },
+      {
+        "id": "27466d0e-dc1a-4676-a2d7-2b5d04bcfd48",
+        "sourceNodeId": "c3000001-0001-4000-8000-000000000006",
+        "sourcePortIndex": 0,
+        "targetNodeId": "c3000001-0001-4000-8000-000000000012",
+        "targetPortIndex": 2,
+        "waypoints": [
+          {
+            "id": "5c5e0669-377b-4ae9-98e9-dccadbaf7431",
+            "position": {
+              "x": 600,
+              "y": 290
+            },
+            "isUserWaypoint": true
+          },
+          {
+            "id": "a454b0c8-3fd2-49db-b20d-c9ad45afd686",
+            "position": {
+              "x": 540,
+              "y": 460
+            },
+            "isUserWaypoint": true
+          }
+        ]
       }
     ],
     "annotations": [
       {
         "id": "f3000001-0001-4000-8000-000000000001",
-        "position": { "x": -550, "y": 550 },
-        "content": "# Tritium Fuel Cycle\n\nSimplified mass balance model of tritium flow in a fusion reactor.\n\n**Green** = blanket breeding path, **Orange** = exhaust recovery path, **Purple** = storage.\n\nChange TBR, burn fraction, and residence times in the code editor (E).",
-        "width": 500,
-        "height": 80,
-        "fontSize": 11
+        "position": {
+          "x": -160,
+          "y": 50
+        },
+        "content": "Simplified mass balance model of tritium flow in a fusion reactor.",
+        "width": 220,
+        "height": 70,
+        "fontSize": 12
+      },
+      {
+        "id": "3d11ea3d-58fa-49f3-8eb4-5edd8495c51a",
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "content": "blanket breeding path",
+        "width": 170,
+        "height": 50,
+        "fontSize": 12,
+        "color": "#81C784"
+      },
+      {
+        "id": "6ac6f775-3c9e-4ceb-833b-16251379cc92",
+        "position": {
+          "x": 110,
+          "y": 310
+        },
+        "content": "exhaust recovery path",
+        "width": 170,
+        "height": 50,
+        "fontSize": 12,
+        "color": "#FFB74D"
+      },
+      {
+        "id": "78746d57-9b49-42f7-b31e-1fde64b9578a",
+        "position": {
+          "x": -120,
+          "y": 500
+        },
+        "content": "storage system",
+        "width": 120,
+        "height": 50,
+        "fontSize": 12,
+        "color": "#BA68C8"
       }
     ]
   },
@@ -584,11 +756,11 @@
     "dt": "100",
     "solver": "RKCK54",
     "adaptive": true,
-    "atol": "",
-    "rtol": "",
-    "ftol": "",
-    "dt_min": "",
-    "dt_max": "",
+    "atol": null,
+    "rtol": null,
+    "ftol": null,
+    "dt_min": null,
+    "dt_max": null,
     "ghostTraces": 0,
     "plotResults": true
   }

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-02-17T18:30:01.537Z",
-    "modified": "2026-02-17T18:30:01.537Z",
+    "created": "2026-03-09T08:37:17.678Z",
+    "modified": "2026-03-09T08:37:17.678Z",
     "name": "arc_same_as_meschini"
   },
   "graph": {
@@ -34,7 +34,7 @@
           "t_fall": "pulse_duration * 0.01",
           "_rotation": 1
         },
-        "color": "#FFFFFF"
+        "color": "#BA68C8"
       },
       {
         "id": "b42c9218-29fa-4504-a664-2e7e4eb6e98f",

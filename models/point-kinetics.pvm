@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-08T14:00:00.000Z",
-    "modified": "2026-03-08T14:00:00.000Z",
+    "created": "2026-03-09T08:22:47.006Z",
+    "modified": "2026-03-09T08:22:47.006Z",
     "name": "point-kinetics"
   },
   "graph": {
@@ -11,7 +11,10 @@
         "id": "e5000001-0001-4000-8000-000000000001",
         "type": "Source",
         "name": "reactivity",
-        "position": { "x": -400, "y": 400 },
+        "position": {
+          "x": -180,
+          "y": 390
+        },
         "inputs": [],
         "outputs": [
           {
@@ -23,14 +26,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "func": "rho_input" },
-        "color": "#EF5350"
+        "params": {
+          "func": "rho_input"
+        },
+        "color": "#E57373"
       },
       {
         "id": "e5000001-0001-4000-8000-000000000002",
         "type": "Constant",
         "name": "no source",
-        "position": { "x": -400, "y": 480 },
+        "position": {
+          "x": -180,
+          "y": 460
+        },
         "inputs": [],
         "outputs": [
           {
@@ -42,13 +50,18 @@
             "color": "#969696"
           }
         ],
-        "params": { "value": "0" }
+        "params": {
+          "value": "0"
+        }
       },
       {
         "id": "e5000001-0001-4000-8000-000000000003",
         "type": "PointKinetics",
         "name": "reactor",
-        "position": { "x": -50, "y": 400 },
+        "position": {
+          "x": -50,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "e5000001-0001-4000-8000-000000000003-input-0",
@@ -77,14 +90,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "n0": "1.0", "Lambda": "1e-5" },
-        "color": "#7E57C2"
+        "params": {
+          "n0": "1.0",
+          "Lambda": "1e-5"
+        },
+        "color": "#BA68C8"
       },
       {
         "id": "e5000001-0001-4000-8000-000000000004",
         "type": "Scope",
         "name": "neutron density",
-        "position": { "x": 300, "y": 390 },
+        "position": {
+          "x": 100,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "e5000001-0001-4000-8000-000000000004-input-0",
@@ -96,7 +115,9 @@
           }
         ],
         "outputs": [],
-        "params": { "labels": "[\"n(t)\"]" }
+        "params": {
+          "labels": "[\"n(t)\"]"
+        }
       }
     ],
     "connections": [
@@ -125,28 +146,31 @@
     "annotations": [
       {
         "id": "g5000001-0001-4000-8000-000000000001",
-        "position": { "x": -450, "y": 550 },
-        "content": "# Reactor Point Kinetics\n\nNeutron population dynamics with 6 delayed precursor groups.\n\n**Try:** Change `rho_step` in the code editor (E).\n- `rho = 0.003` → delayed supercritical (slow rise)\n- `rho = 0.008` → prompt supercritical (rapid excursion!)\n- `rho = -0.01` → subcritical (decay)",
-        "width": 500,
-        "height": 100,
+        "position": {
+          "x": -240,
+          "y": 280
+        },
+        "content": "# Reactor Point Kinetics\n\nNeutron population dynamics with 6 delayed precursor groups.",
+        "width": 450,
+        "height": 70,
         "fontSize": 11
       }
     ]
   },
   "events": [],
   "codeContext": {
-    "code": "# reactivity step [unitless]\n# beta ~ 0.0065, so:\n#   rho < beta  -> delayed supercritical (safe)\n#   rho > beta  -> prompt supercritical (dangerous!)\n#   rho < 0     -> subcritical\nrho_step = 0.003\n\ndef rho_input(t):\n    if t > 0.1:\n        return rho_step\n    return 0.0"
+    "code": "# reactivity step [unitless]\n# beta ~ 0.0065, so:\n#   rho < beta  -> delayed supercritical (safe)\n#   rho > beta  -> prompt supercritical (dangerous!)\n#   rho < 0     -> subcritical\n\nrho_step = 0.003 # delayed supercritical\n# rho_step = 0.008 # prompt supercritical\n# rho_step = -0.01 # subcritical\n\ndef rho_input(t):\n    if t > 0.1:\n        return rho_step\n    return 0.0"
   },
   "simulationSettings": {
     "duration": "100",
     "dt": "0.01",
     "solver": "GEAR52A",
     "adaptive": true,
-    "atol": "",
-    "rtol": "",
+    "atol": null,
+    "rtol": null,
     "ftol": "1e-6",
-    "dt_min": "",
-    "dt_max": "",
+    "dt_min": null,
+    "dt_max": null,
     "ghostTraces": 0,
     "plotResults": true
   }

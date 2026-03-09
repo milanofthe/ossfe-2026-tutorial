@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-08T12:00:00.000Z",
-    "modified": "2026-03-08T12:00:00.000Z",
+    "created": "2026-03-09T08:33:36.806Z",
+    "modified": "2026-03-09T08:33:36.806Z",
     "name": "plasma-position-control"
   },
   "graph": {
@@ -11,7 +11,10 @@
         "id": "d4000001-0001-4000-8000-000000000001",
         "type": "Constant",
         "name": "z_ref",
-        "position": { "x": -500, "y": 400 },
+        "position": {
+          "x": -200,
+          "y": 280
+        },
         "inputs": [],
         "outputs": [
           {
@@ -23,14 +26,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "value": "0" },
-        "color": "#64B5F6"
+        "params": {
+          "value": "0",
+          "_rotation": 1
+        }
       },
       {
         "id": "d4000001-0001-4000-8000-000000000002",
         "type": "Adder",
         "name": "error",
-        "position": { "x": -300, "y": 400 },
+        "position": {
+          "x": -140,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000002-input-0",
@@ -59,13 +67,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "operations": "\"+-\"" }
+        "params": {
+          "operations": "\"+-\""
+        },
+        "color": "#64B5F6"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000003",
         "type": "PID",
         "name": "PID",
-        "position": { "x": -100, "y": 400 },
+        "position": {
+          "x": -20,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000003-input-0",
@@ -86,14 +100,22 @@
             "color": "#969696"
           }
         ],
-        "params": { "Kp": "Kp", "Ki": "Ki", "Kd": "Kd", "f_max": "100" },
-        "color": "#42A5F5"
+        "params": {
+          "Kp": "Kp",
+          "Ki": "Ki",
+          "Kd": "Kd",
+          "f_max": "100"
+        },
+        "color": "#64B5F6"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000004",
         "type": "Amplifier",
         "name": "coil L/R",
-        "position": { "x": 100, "y": 400 },
+        "position": {
+          "x": 100,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000004-input-0",
@@ -114,14 +136,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "K_coil" },
-        "color": "#42A5F5"
+        "params": {
+          "gain": "K_coil"
+        },
+        "color": "#64B5F6"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000005",
         "type": "Source",
         "name": "ELM kick",
-        "position": { "x": 400, "y": 280 },
+        "position": {
+          "x": 340,
+          "y": 280
+        },
         "inputs": [],
         "outputs": [
           {
@@ -133,14 +160,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "func": "disturbance" },
-        "color": "#EF5350"
+        "params": {
+          "func": "disturbance",
+          "_rotation": 1
+        }
       },
       {
         "id": "d4000001-0001-4000-8000-000000000006",
         "type": "Amplifier",
         "name": "instability",
-        "position": { "x": 650, "y": 520 },
+        "position": {
+          "x": 590,
+          "y": 490
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000006-input-0",
@@ -161,14 +193,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "_rotation": 2, "gain": "n_index" },
-        "color": "#EF5350"
+        "params": {
+          "_rotation": 2,
+          "gain": "n_index"
+        },
+        "color": "#E57373"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000007",
         "type": "Adder",
         "name": "forces",
-        "position": { "x": 400, "y": 400 },
+        "position": {
+          "x": 400,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000007-input-0",
@@ -205,14 +243,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "operations": "\"++-\"" },
+        "params": {
+          "operations": "\"++-\""
+        },
         "color": "#81C784"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000008",
         "type": "Amplifier",
         "name": "1/m",
-        "position": { "x": 600, "y": 400 },
+        "position": {
+          "x": 520,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000008-input-0",
@@ -233,14 +276,19 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "1/m_eff" },
+        "params": {
+          "gain": "1/m_eff"
+        },
         "color": "#81C784"
       },
       {
         "id": "d4000001-0001-4000-8000-000000000009",
         "type": "Integrator",
         "name": "velocity",
-        "position": { "x": 800, "y": 400 },
+        "position": {
+          "x": 640,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000009-input-0",
@@ -268,7 +316,10 @@
         "id": "d4000001-0001-4000-8000-000000000010",
         "type": "Integrator",
         "name": "position z",
-        "position": { "x": 1000, "y": 400 },
+        "position": {
+          "x": 760,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "d4000001-0001-4000-8000-000000000010-input-0",
@@ -293,38 +344,73 @@
         "color": "#81C784"
       },
       {
-        "id": "d4000001-0001-4000-8000-000000000011",
+        "id": "50bafcbb-96cb-42bf-a58a-000af9be8851",
         "type": "Scope",
-        "name": "results",
-        "position": { "x": 1200, "y": 370 },
+        "name": "position",
+        "position": {
+          "x": 890,
+          "y": 400
+        },
         "inputs": [
           {
-            "id": "d4000001-0001-4000-8000-000000000011-input-0",
-            "nodeId": "d4000001-0001-4000-8000-000000000011",
+            "id": "50bafcbb-96cb-42bf-a58a-000af9be8851-input-0",
+            "nodeId": "50bafcbb-96cb-42bf-a58a-000af9be8851",
             "name": "z [m]",
             "direction": "input",
             "index": 0,
             "color": "#969696"
-          },
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"z [m]\"]"
+        }
+      },
+      {
+        "id": "c1537246-bd6f-4f3d-a2bf-15b9aaf9eec5",
+        "type": "Scope",
+        "name": "coil",
+        "position": {
+          "x": 220,
+          "y": 350
+        },
+        "inputs": [
           {
-            "id": "d4000001-0001-4000-8000-000000000011-input-1",
-            "nodeId": "d4000001-0001-4000-8000-000000000011",
+            "id": "c1537246-bd6f-4f3d-a2bf-15b9aaf9eec5-input-0",
+            "nodeId": "c1537246-bd6f-4f3d-a2bf-15b9aaf9eec5",
             "name": "I_coil [A]",
             "direction": "input",
-            "index": 1,
-            "color": "#969696"
-          },
-          {
-            "id": "d4000001-0001-4000-8000-000000000011-input-2",
-            "nodeId": "d4000001-0001-4000-8000-000000000011",
-            "name": "disturbance",
-            "direction": "input",
-            "index": 2,
+            "index": 0,
             "color": "#969696"
           }
         ],
         "outputs": [],
-        "params": { "labels": "[\"z [m]\", \"I_coil [A]\", \"disturbance [N]\"]" }
+        "params": {
+          "labels": "[\"I_coil [A]\"]"
+        }
+      },
+      {
+        "id": "7d2378c5-d89e-42e3-be5d-3d846bd758a0",
+        "type": "Scope",
+        "name": "disturbance",
+        "position": {
+          "x": 470,
+          "y": 330
+        },
+        "inputs": [
+          {
+            "id": "7d2378c5-d89e-42e3-be5d-3d846bd758a0-input-0",
+            "nodeId": "7d2378c5-d89e-42e3-be5d-3d846bd758a0",
+            "name": "disturbance [N]",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"disturbance [N]\"]"
+        }
       }
     ],
     "connections": [
@@ -355,34 +441,6 @@
         "sourcePortIndex": 0,
         "targetNodeId": "d4000001-0001-4000-8000-000000000004",
         "targetPortIndex": 0
-      },
-      {
-        "id": "e4000001-0001-4000-8000-000000000005",
-        "sourceNodeId": "d4000001-0001-4000-8000-000000000004",
-        "sourcePortIndex": 0,
-        "targetNodeId": "d4000001-0001-4000-8000-000000000007",
-        "targetPortIndex": 0
-      },
-      {
-        "id": "e4000001-0001-4000-8000-000000000006",
-        "sourceNodeId": "d4000001-0001-4000-8000-000000000004",
-        "sourcePortIndex": 0,
-        "targetNodeId": "d4000001-0001-4000-8000-000000000011",
-        "targetPortIndex": 1
-      },
-      {
-        "id": "e4000001-0001-4000-8000-000000000007",
-        "sourceNodeId": "d4000001-0001-4000-8000-000000000005",
-        "sourcePortIndex": 0,
-        "targetNodeId": "d4000001-0001-4000-8000-000000000007",
-        "targetPortIndex": 1
-      },
-      {
-        "id": "e4000001-0001-4000-8000-000000000008",
-        "sourceNodeId": "d4000001-0001-4000-8000-000000000005",
-        "sourcePortIndex": 0,
-        "targetNodeId": "d4000001-0001-4000-8000-000000000011",
-        "targetPortIndex": 2
       },
       {
         "id": "e4000001-0001-4000-8000-000000000009",
@@ -420,20 +478,51 @@
         "targetPortIndex": 0
       },
       {
-        "id": "e4000001-0001-4000-8000-000000000014",
+        "id": "1cb22789-d2fb-4a47-94c2-05d7cc812bbf",
+        "sourceNodeId": "d4000001-0001-4000-8000-000000000005",
+        "sourcePortIndex": 0,
+        "targetNodeId": "d4000001-0001-4000-8000-000000000007",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "24808d8b-071b-41b5-920d-c8bcfc5f7c7e",
+        "sourceNodeId": "d4000001-0001-4000-8000-000000000004",
+        "sourcePortIndex": 0,
+        "targetNodeId": "d4000001-0001-4000-8000-000000000007",
+        "targetPortIndex": 1
+      },
+      {
+        "id": "5641b474-b303-4708-85a4-05d9f0646425",
         "sourceNodeId": "d4000001-0001-4000-8000-000000000010",
         "sourcePortIndex": 0,
-        "targetNodeId": "d4000001-0001-4000-8000-000000000011",
+        "targetNodeId": "50bafcbb-96cb-42bf-a58a-000af9be8851",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "623ea1ec-0a95-4b8c-85cc-20a88973a7ce",
+        "sourceNodeId": "d4000001-0001-4000-8000-000000000004",
+        "sourcePortIndex": 0,
+        "targetNodeId": "c1537246-bd6f-4f3d-a2bf-15b9aaf9eec5",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "cab8132e-06b8-471a-a44a-4c1a5d4dd649",
+        "sourceNodeId": "d4000001-0001-4000-8000-000000000005",
+        "sourcePortIndex": 0,
+        "targetNodeId": "7d2378c5-d89e-42e3-be5d-3d846bd758a0",
         "targetPortIndex": 0
       }
     ],
     "annotations": [
       {
         "id": "f4000001-0001-4000-8000-000000000001",
-        "position": { "x": -550, "y": 570 },
-        "content": "# Plasma Vertical Position Control\n\nThe plasma column is vertically **unstable** (positive feedback from elongation).\nA PID controller drives the vertical field coils to stabilize position.\nELM-like disturbance kicks test the controller's response.\n\nTry increasing `n_index` to make the instability stronger.",
-        "width": 550,
-        "height": 80,
+        "position": {
+          "x": -230,
+          "y": 480
+        },
+        "content": "# Plasma Vertical Position Control\n\nThe plasma column is vertically **unstable** (positive feedback from elongation).\nA PID controller drives the vertical field coils to stabilize position.\nELM-like disturbance kicks test the controller's response.",
+        "width": 430,
+        "height": 100,
         "fontSize": 11
       }
     ]
@@ -445,12 +534,12 @@
   "simulationSettings": {
     "duration": "0.5",
     "dt": "0.01",
-    "solver": "RKCK54",
+    "solver": "RKBS32",
     "adaptive": true,
-    "atol": "",
-    "rtol": "",
-    "ftol": "",
-    "dt_min": "",
+    "atol": null,
+    "rtol": null,
+    "ftol": null,
+    "dt_min": null,
     "dt_max": "0.001",
     "ghostTraces": 0,
     "plotResults": true

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-08T14:00:00.000Z",
-    "modified": "2026-03-08T14:00:00.000Z",
+    "created": "2026-03-09T08:27:40.171Z",
+    "modified": "2026-03-09T08:27:40.171Z",
     "name": "plasma-power-balance"
   },
   "graph": {
@@ -11,7 +11,10 @@
         "id": "e6000001-0001-4000-8000-000000000001",
         "type": "Source",
         "name": "P_heating",
-        "position": { "x": -400, "y": 400 },
+        "position": {
+          "x": -160,
+          "y": 280
+        },
         "inputs": [],
         "outputs": [
           {
@@ -23,14 +26,20 @@
             "color": "#969696"
           }
         ],
-        "params": { "func": "heating_power" },
+        "params": {
+          "func": "heating_power",
+          "_rotation": 1
+        },
         "color": "#EF5350"
       },
       {
         "id": "e6000001-0001-4000-8000-000000000002",
         "type": "ODE",
         "name": "plasma",
-        "position": { "x": -50, "y": 400 },
+        "position": {
+          "x": -50,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "e6000001-0001-4000-8000-000000000002-input-0",
@@ -53,7 +62,7 @@
         ],
         "params": {
           "func": "power_balance",
-          "initial_value": "[T0]"
+          "initial_value": "T0"
         },
         "color": "#EF5350"
       },
@@ -61,7 +70,10 @@
         "id": "e6000001-0001-4000-8000-000000000003",
         "type": "Scope",
         "name": "temperature",
-        "position": { "x": 300, "y": 370 },
+        "position": {
+          "x": 90,
+          "y": 400
+        },
         "inputs": [
           {
             "id": "e6000001-0001-4000-8000-000000000003-input-0",
@@ -70,24 +82,22 @@
             "direction": "input",
             "index": 0,
             "color": "#969696"
-          },
-          {
-            "id": "e6000001-0001-4000-8000-000000000003-input-1",
-            "nodeId": "e6000001-0001-4000-8000-000000000003",
-            "name": "P_heat [MW]",
-            "direction": "input",
-            "index": 1,
-            "color": "#969696"
           }
         ],
         "outputs": [],
-        "params": { "labels": "[\"T [keV]\", \"P_heat [MW]\"]" }
+        "params": {
+          "labels": "[\"T [keV]\"]",
+          "_rotation": 0
+        }
       },
       {
         "id": "e6000001-0001-4000-8000-000000000004",
         "type": "Amplifier",
         "name": "W to MW",
-        "position": { "x": -50, "y": 300 },
+        "position": {
+          "x": -50,
+          "y": 340
+        },
         "inputs": [
           {
             "id": "e6000001-0001-4000-8000-000000000004-input-0",
@@ -108,7 +118,33 @@
             "color": "#969696"
           }
         ],
-        "params": { "gain": "1e-6" }
+        "params": {
+          "gain": "1e-6"
+        }
+      },
+      {
+        "id": "202933ea-2041-481c-8ce6-f4dd9ba6ccb1",
+        "type": "Scope",
+        "name": "heating",
+        "position": {
+          "x": 100,
+          "y": 340
+        },
+        "inputs": [
+          {
+            "id": "202933ea-2041-481c-8ce6-f4dd9ba6ccb1-input-0",
+            "nodeId": "202933ea-2041-481c-8ce6-f4dd9ba6ccb1",
+            "name": "P_heat [MW]",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"P_heat [MW]\"]",
+          "_rotation": 0
+        }
       }
     ],
     "connections": [
@@ -134,38 +170,41 @@
         "targetPortIndex": 0
       },
       {
-        "id": "f6000001-0001-4000-8000-000000000004",
+        "id": "5268216d-c90c-4c96-8d29-ebd450d3eb96",
         "sourceNodeId": "e6000001-0001-4000-8000-000000000004",
         "sourcePortIndex": 0,
-        "targetNodeId": "e6000001-0001-4000-8000-000000000003",
-        "targetPortIndex": 1
+        "targetNodeId": "202933ea-2041-481c-8ce6-f4dd9ba6ccb1",
+        "targetPortIndex": 0
       }
     ],
     "annotations": [
       {
         "id": "g6000001-0001-4000-8000-000000000001",
-        "position": { "x": -500, "y": 530 },
-        "content": "# Plasma Power Balance (0D)\n\nSimplified tokamak energy balance:\n$$\\frac{3}{2} n V \\frac{dT}{dt} = P_{heat} - P_{loss}$$\n\nwhere $P_{loss} = \\frac{3/2 \\, n V T}{\\tau_E}$ and $\\tau_E = C \\cdot T^\\alpha$.\n\nTry changing `P_nbi` or `C_tau` to see how confinement affects burn.",
-        "width": 550,
-        "height": 100,
+        "position": {
+          "x": -440,
+          "y": 280
+        },
+        "content": "# Plasma Power Balance (0D)\n\nSimplified tokamak energy balance:\n$$\\frac{3}{2} n V \\frac{dT}{dt} = P_{heat} - P_{loss}$$\n\nwhere $P_{loss} = \\frac{3/2 \\, n V T}{\\tau_E}$ and $\\tau_E = C \\cdot T^\\alpha$.",
+        "width": 220,
+        "height": 130,
         "fontSize": 11
       }
     ]
   },
   "events": [],
   "codeContext": {
-    "code": "import numpy as np\n\n# plasma parameters\nn_e = 1e20       # electron density [m^-3]\nV = 30.0         # plasma volume [m^3]\nC_tau = 0.05     # confinement scaling [s/keV^alpha]\nalpha = 1.0      # scaling exponent\n\n# heating\nP_ohmic_0 = 2e6  # initial ohmic power [W]\nP_nbi = 10e6     # NBI heating [W]\n\n# thermal coefficient\ne_charge = 1.602e-19\nthermal_coeff = 1.5 * n_e * V * e_charge * 1e-3\n\n# initial temperature\nT0 = 0.1  # keV\n\ndef heating_power(t):\n    P_ohm = P_ohmic_0 / (1 + t * 0.5)\n    P_nbi_t = P_nbi if t > 1 else P_nbi * t\n    return P_ohm + P_nbi_t\n\ndef power_balance(x, u, t):\n    T = max(x[0], 0.01)\n    P_total = u[0]\n    tau_E = C_tau * T**alpha\n    P_loss = thermal_coeff * T / tau_E\n    dT_dt = (P_total - P_loss) / thermal_coeff\n    return np.array([dT_dt])"
+    "code": "# plasma parameters\nn_e = 1e20       # electron density [m^-3]\nV = 30.0         # plasma volume [m^3]\nC_tau = 0.05     # confinement scaling [s/keV^alpha]\nalpha = 1.0      # scaling exponent\n\n# heating\nP_ohmic_0 = 2e6  # initial ohmic power [W]\nP_nbi = 10e6     # NBI heating [W]\n\n# thermal coefficient\ne_charge = 1.602e-19\nthermal_coeff = 1.5 * n_e * V * e_charge * 1e-3\n\n# initial temperature\nT0 = 0.1  # keV\n\ndef heating_power(t):\n    P_ohm = P_ohmic_0 / (1 + t * 0.5)\n    P_nbi_t = P_nbi if t > 1 else P_nbi * t\n    return P_ohm + P_nbi_t\n\ndef power_balance(x, u, t):\n    T = max(x[0], 0.01)\n    P_total = u[0]\n    tau_E = C_tau * T**alpha\n    P_loss = thermal_coeff * T / tau_E\n    dT_dt = (P_total - P_loss) / thermal_coeff\n    return dT_dt"
   },
   "simulationSettings": {
-    "duration": "20",
+    "duration": "10",
     "dt": "0.1",
-    "solver": "RKCK54",
+    "solver": "RKBS32",
     "adaptive": true,
-    "atol": "",
-    "rtol": "",
-    "ftol": "",
-    "dt_min": "",
-    "dt_max": "",
+    "atol": null,
+    "rtol": null,
+    "ftol": null,
+    "dt_min": null,
+    "dt_max": "0.01",
     "ghostTraces": 0,
     "plotResults": true
   }
