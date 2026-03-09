@@ -2,41 +2,10 @@
 
 Tutorial materials for the [OSSFE 2026](https://ossfe.org/OSSFE_2026/) conference in Munich (June 10–12, 2026).
 
-**Session:** T7 — *PathSim: An Open-Source Python Framework for Dynamic System Simulation in Fusion Energy Applications*
+**Session:** [T7 — PathSim: An Open-Source Python Framework for Dynamic System Simulation in Fusion Energy Applications](https://ossfe.org/OSSFE_2026/programme/abstracts/rother-pathsim/)
 
 **Author:** Milan Rother
 
-## Quick Start
-
-```bash
-pip install pathsim
-```
-
-```python
-from pathsim import Simulation, Connection
-from pathsim.blocks import Integrator, Amplifier, Adder, Scope
-
-# Spring-mass-damper in 7 lines
-I1 = Integrator(5)        # velocity
-I2 = Integrator(2)        # position
-A1 = Amplifier(-1.5)      # spring
-A2 = Amplifier(-0.2)      # damping
-P1 = Adder()
-Sc = Scope(labels=["v(t)", "x(t)"])
-
-Sim = Simulation(
-    [I1, I2, A1, A2, P1, Sc],
-    [Connection(I1, I2, A2, Sc),
-     Connection(I2, A1, Sc[1]),
-     Connection(A1, P1),
-     Connection(A2, P1[1]),
-     Connection(P1, I1)],
-    dt=0.1
-)
-
-Sim.run(30)
-Sc.plot()
-```
 
 ## Tutorial Scripts
 
