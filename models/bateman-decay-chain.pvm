@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-10T12:00:00.000Z",
-    "modified": "2026-03-10T12:00:00.000Z",
+    "created": "2026-03-10T21:08:33.663Z",
+    "modified": "2026-03-10T21:08:33.663Z",
     "name": "bateman-decay-chain"
   },
   "graph": {
@@ -45,8 +45,8 @@
         "type": "Amplifier",
         "name": "-lambda_A",
         "position": {
-          "x": 260,
-          "y": 150
+          "x": 100,
+          "y": 230
         },
         "inputs": [
           {
@@ -69,7 +69,8 @@
           }
         ],
         "params": {
-          "gain": "-lambda_A"
+          "gain": "-lambda_A",
+          "_rotation": 2
         },
         "color": "#E57373"
       },
@@ -78,8 +79,8 @@
         "type": "Scope",
         "name": "species A",
         "position": {
-          "x": 420,
-          "y": 100
+          "x": 260,
+          "y": 150
         },
         "inputs": [
           {
@@ -101,8 +102,8 @@
         "type": "Amplifier",
         "name": "lambda_A",
         "position": {
-          "x": 100,
-          "y": 320
+          "x": 240,
+          "y": 230
         },
         "inputs": [
           {
@@ -134,8 +135,8 @@
         "type": "Adder",
         "name": "dN_B/dt",
         "position": {
-          "x": 240,
-          "y": 370
+          "x": 360,
+          "y": 240
         },
         "inputs": [
           {
@@ -175,8 +176,8 @@
         "type": "Integrator",
         "name": "N_B",
         "position": {
-          "x": 400,
-          "y": 370
+          "x": 480,
+          "y": 240
         },
         "inputs": [
           {
@@ -208,8 +209,8 @@
         "type": "Amplifier",
         "name": "lambda_B",
         "position": {
-          "x": 560,
-          "y": 370
+          "x": 480,
+          "y": 320
         },
         "inputs": [
           {
@@ -232,7 +233,8 @@
           }
         ],
         "params": {
-          "gain": "lambda_B"
+          "gain": "lambda_B",
+          "_rotation": 2
         },
         "color": "#FFA726"
       },
@@ -241,8 +243,8 @@
         "type": "Scope",
         "name": "species B",
         "position": {
-          "x": 560,
-          "y": 290
+          "x": 600,
+          "y": 240
         },
         "inputs": [
           {
@@ -264,8 +266,8 @@
         "type": "Integrator",
         "name": "N_C",
         "position": {
-          "x": 400,
-          "y": 550
+          "x": 480,
+          "y": 400
         },
         "inputs": [
           {
@@ -297,8 +299,8 @@
         "type": "Scope",
         "name": "species C",
         "position": {
-          "x": 560,
-          "y": 550
+          "x": 600,
+          "y": 400
         },
         "inputs": [
           {
@@ -330,24 +332,7 @@
         "sourcePortIndex": 0,
         "targetNodeId": "1c96129d-607d-4289-842c-5192759257d0",
         "targetPortIndex": 0,
-        "waypoints": [
-          {
-            "id": "6c0e30e5-17aa-4107-b5d4-7c50f58aad63",
-            "position": {
-              "x": 320,
-              "y": 70
-            },
-            "isUserWaypoint": true
-          },
-          {
-            "id": "e74e2547-61c0-4068-82ca-62836eb19a5a",
-            "position": {
-              "x": 40,
-              "y": 70
-            },
-            "isUserWaypoint": true
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "79421303-7d6e-4c31-a1b2-2b8284ced861",
@@ -362,16 +347,7 @@
         "sourcePortIndex": 0,
         "targetNodeId": "5719d145-b635-4d6a-99b0-433634f80b54",
         "targetPortIndex": 0,
-        "waypoints": [
-          {
-            "id": "b2aeadac-70c3-4c06-93d3-67b9455a9005",
-            "position": {
-              "x": 40,
-              "y": 250
-            },
-            "isUserWaypoint": true
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "1980b5ab-1552-4cb7-a49f-f0b3cb66d0ea",
@@ -400,24 +376,7 @@
         "sourcePortIndex": 0,
         "targetNodeId": "d0ee0677-12e5-4194-af19-4964bb6a6213",
         "targetPortIndex": 1,
-        "waypoints": [
-          {
-            "id": "48e1b143-3090-4c90-addc-df2768dc271a",
-            "position": {
-              "x": 620,
-              "y": 440
-            },
-            "isUserWaypoint": true
-          },
-          {
-            "id": "03264007-346d-4b11-a6b2-616679065ec1",
-            "position": {
-              "x": 180,
-              "y": 440
-            },
-            "isUserWaypoint": true
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "79498f62-fed1-4e7b-9381-7068d0db09bd",
@@ -432,24 +391,7 @@
         "sourcePortIndex": 0,
         "targetNodeId": "a172ba52-964d-4023-8925-0722c29d8467",
         "targetPortIndex": 0,
-        "waypoints": [
-          {
-            "id": "b7642b28-a2e0-433e-a37e-8da4e3cb5e5c",
-            "position": {
-              "x": 620,
-              "y": 490
-            },
-            "isUserWaypoint": true
-          },
-          {
-            "id": "b31a50c9-6954-4ff5-877d-363a3c0e49c6",
-            "position": {
-              "x": 340,
-              "y": 490
-            },
-            "isUserWaypoint": true
-          }
-        ]
+        "waypoints": []
       },
       {
         "id": "ff631c2c-e235-405a-a4cc-97d1cd72afe8",
@@ -463,31 +405,31 @@
       {
         "id": "804581ee-b828-42a9-8726-5e7170756073",
         "position": {
-          "x": 60,
-          "y": 50
+          "x": 30,
+          "y": 340
         },
         "content": "# Bateman Equations\n\nSequential radioactive decay chain: **A -> B -> C**\nClassic nuclear engineering model for isotope transmutation and activation.",
         "width": 360,
-        "height": 80,
+        "height": 100,
         "fontSize": 11
       },
       {
         "id": "dc3b8c96-4ec7-48f0-ba11-4c627095511f",
         "position": {
-          "x": 60,
-          "y": 130
+          "x": 50,
+          "y": 260
         },
         "content": "parent isotope (A)",
-        "width": 140,
-        "height": 35,
+        "width": 130,
+        "height": 50,
         "fontSize": 10,
         "color": "#E57373"
       },
       {
         "id": "35898e60-fa64-45bb-aed9-74b7dbb32117",
         "position": {
-          "x": 200,
-          "y": 330
+          "x": 340,
+          "y": 270
         },
         "content": "daughter isotope (B)",
         "width": 150,
@@ -498,8 +440,8 @@
       {
         "id": "fd7d0457-1ad9-4120-b8c3-88952326a323",
         "position": {
-          "x": 360,
-          "y": 510
+          "x": 420,
+          "y": 430
         },
         "content": "granddaughter (C)",
         "width": 140,

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-09T08:27:40.171Z",
-    "modified": "2026-03-09T08:27:40.171Z",
+    "created": "2026-03-10T21:21:26.360Z",
+    "modified": "2026-03-10T21:21:26.360Z",
     "name": "plasma-power-balance"
   },
   "graph": {
@@ -38,7 +38,7 @@
         "name": "plasma",
         "position": {
           "x": -50,
-          "y": 400
+          "y": 460
         },
         "inputs": [
           {
@@ -72,7 +72,7 @@
         "name": "temperature",
         "position": {
           "x": 90,
-          "y": 400
+          "y": 460
         },
         "inputs": [
           {
@@ -182,7 +182,7 @@
         "id": "g6000001-0001-4000-8000-000000000001",
         "position": {
           "x": -440,
-          "y": 280
+          "y": 330
         },
         "content": "# Plasma Power Balance (0D)\n\nSimplified tokamak energy balance:\n$$\\frac{3}{2} n V \\frac{dT}{dt} = P_{heat} - P_{loss}$$\n\nwhere $P_{loss} = \\frac{3/2 \\, n V T}{\\tau_E}$ and $\\tau_E = C \\cdot T^\\alpha$.",
         "width": 220,

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "metadata": {
-    "created": "2026-03-10T12:00:00.000Z",
-    "modified": "2026-03-10T12:00:00.000Z",
+    "created": "2026-03-10T21:20:15.304Z",
+    "modified": "2026-03-10T21:20:15.304Z",
     "name": "magnet-quench-circuit"
   },
   "graph": {
@@ -12,7 +12,7 @@
         "type": "Source",
         "name": "quench trigger",
         "position": {
-          "x": -240,
+          "x": -180,
           "y": 350
         },
         "inputs": [],
@@ -57,120 +57,37 @@
             "direction": "output",
             "index": 0,
             "color": "#969696"
+          },
+          {
+            "id": "001aa7e6-c766-4573-966d-af76d745196c-output-1",
+            "nodeId": "001aa7e6-c766-4573-966d-af76d745196c",
+            "name": "out 1",
+            "direction": "output",
+            "index": 1,
+            "color": "#969696"
+          },
+          {
+            "id": "001aa7e6-c766-4573-966d-af76d745196c-output-2",
+            "nodeId": "001aa7e6-c766-4573-966d-af76d745196c",
+            "name": "out 2",
+            "direction": "output",
+            "index": 2,
+            "color": "#969696"
           }
         ],
         "params": {
           "func": "quench_ode",
-          "initial_value": "[I0, T0, l_nz0]"
+          "initial_value": "np.array([I0, T0, l_nz0])"
         },
         "color": "#64B5F6"
-      },
-      {
-        "id": "b6006309-f968-4a2c-b19b-4460a383905a",
-        "type": "Function",
-        "name": "I(t)",
-        "position": {
-          "x": 180,
-          "y": 280
-        },
-        "inputs": [
-          {
-            "id": "b6006309-f968-4a2c-b19b-4460a383905a-input-0",
-            "nodeId": "b6006309-f968-4a2c-b19b-4460a383905a",
-            "name": "in 0",
-            "direction": "input",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "outputs": [
-          {
-            "id": "b6006309-f968-4a2c-b19b-4460a383905a-output-0",
-            "nodeId": "b6006309-f968-4a2c-b19b-4460a383905a",
-            "name": "out 0",
-            "direction": "output",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "params": {
-          "func": "get_current"
-        },
-        "color": "#FFA726"
-      },
-      {
-        "id": "531079c2-8539-487e-9ae7-ac232fb832b3",
-        "type": "Function",
-        "name": "T(t)",
-        "position": {
-          "x": 180,
-          "y": 350
-        },
-        "inputs": [
-          {
-            "id": "531079c2-8539-487e-9ae7-ac232fb832b3-input-0",
-            "nodeId": "531079c2-8539-487e-9ae7-ac232fb832b3",
-            "name": "in 0",
-            "direction": "input",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "outputs": [
-          {
-            "id": "531079c2-8539-487e-9ae7-ac232fb832b3-output-0",
-            "nodeId": "531079c2-8539-487e-9ae7-ac232fb832b3",
-            "name": "out 0",
-            "direction": "output",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "params": {
-          "func": "get_temperature"
-        },
-        "color": "#FFA726"
-      },
-      {
-        "id": "dade9fb9-caa9-454d-8d88-e6b06082519b",
-        "type": "Function",
-        "name": "l_nz(t)",
-        "position": {
-          "x": 180,
-          "y": 420
-        },
-        "inputs": [
-          {
-            "id": "dade9fb9-caa9-454d-8d88-e6b06082519b-input-0",
-            "nodeId": "dade9fb9-caa9-454d-8d88-e6b06082519b",
-            "name": "in 0",
-            "direction": "input",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "outputs": [
-          {
-            "id": "dade9fb9-caa9-454d-8d88-e6b06082519b-output-0",
-            "nodeId": "dade9fb9-caa9-454d-8d88-e6b06082519b",
-            "name": "out 0",
-            "direction": "output",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "params": {
-          "func": "get_nz_length"
-        },
-        "color": "#FFA726"
       },
       {
         "id": "348d6e02-395b-4ec2-a812-0b3bedf92343",
         "type": "Scope",
         "name": "current",
         "position": {
-          "x": 360,
-          "y": 280
+          "x": 160,
+          "y": 350
         },
         "inputs": [
           {
@@ -180,57 +97,27 @@
             "direction": "input",
             "index": 0,
             "color": "#969696"
-          }
-        ],
-        "outputs": [],
-        "params": {
-          "labels": "[\"I [kA]\"]"
-        }
-      },
-      {
-        "id": "ada2a4f4-79dc-4e41-a08b-64f4172057f1",
-        "type": "Scope",
-        "name": "temperature",
-        "position": {
-          "x": 360,
-          "y": 350
-        },
-        "inputs": [
+          },
           {
-            "id": "ada2a4f4-79dc-4e41-a08b-64f4172057f1-input-0",
-            "nodeId": "ada2a4f4-79dc-4e41-a08b-64f4172057f1",
-            "name": "T [K]",
+            "id": "348d6e02-395b-4ec2-a812-0b3bedf92343-input-1",
+            "nodeId": "348d6e02-395b-4ec2-a812-0b3bedf92343",
+            "name": "T",
             "direction": "input",
-            "index": 0,
+            "index": 1,
+            "color": "#969696"
+          },
+          {
+            "id": "348d6e02-395b-4ec2-a812-0b3bedf92343-input-2",
+            "nodeId": "348d6e02-395b-4ec2-a812-0b3bedf92343",
+            "name": "l_nz",
+            "direction": "input",
+            "index": 2,
             "color": "#969696"
           }
         ],
         "outputs": [],
         "params": {
-          "labels": "[\"T [K]\"]"
-        }
-      },
-      {
-        "id": "4e60b064-ea7a-4b4d-af98-b15d85c287c4",
-        "type": "Scope",
-        "name": "normal zone",
-        "position": {
-          "x": 360,
-          "y": 420
-        },
-        "inputs": [
-          {
-            "id": "4e60b064-ea7a-4b4d-af98-b15d85c287c4-input-0",
-            "nodeId": "4e60b064-ea7a-4b4d-af98-b15d85c287c4",
-            "name": "l_nz [m]",
-            "direction": "input",
-            "index": 0,
-            "color": "#969696"
-          }
-        ],
-        "outputs": [],
-        "params": {
-          "labels": "[\"l_nz [m]\"]"
+          "labels": "[\"I [kA]\", \"T\", \"l_nz\"]"
         }
       }
     ],
@@ -243,109 +130,44 @@
         "targetPortIndex": 0
       },
       {
-        "id": "24c35990-fa12-4e94-92c7-8761e5723ff9",
+        "id": "f2852b0e-a976-46fe-bc61-6b1890593d9f",
         "sourceNodeId": "001aa7e6-c766-4573-966d-af76d745196c",
-        "sourcePortIndex": 0,
-        "targetNodeId": "b6006309-f968-4a2c-b19b-4460a383905a",
-        "targetPortIndex": 0
-      },
-      {
-        "id": "bf36882b-f944-4cc2-8f6b-8fd2ad009178",
-        "sourceNodeId": "001aa7e6-c766-4573-966d-af76d745196c",
-        "sourcePortIndex": 0,
-        "targetNodeId": "531079c2-8539-487e-9ae7-ac232fb832b3",
-        "targetPortIndex": 0,
-        "waypoints": [
-          {
-            "id": "e045ffcf-4770-4632-b92f-4246ce1195d9",
-            "position": {
-              "x": 140,
-              "y": 350
-            },
-            "isUserWaypoint": true
-          }
-        ]
-      },
-      {
-        "id": "681d6c16-07cf-41be-821e-9beb926e9366",
-        "sourceNodeId": "001aa7e6-c766-4573-966d-af76d745196c",
-        "sourcePortIndex": 0,
-        "targetNodeId": "dade9fb9-caa9-454d-8d88-e6b06082519b",
-        "targetPortIndex": 0,
-        "waypoints": [
-          {
-            "id": "d457b857-6dca-44c8-b984-65feaaf1a47c",
-            "position": {
-              "x": 140,
-              "y": 420
-            },
-            "isUserWaypoint": true
-          }
-        ]
-      },
-      {
-        "id": "9cba646c-31c0-4ad8-87ea-2f33f4cc9f0a",
-        "sourceNodeId": "b6006309-f968-4a2c-b19b-4460a383905a",
         "sourcePortIndex": 0,
         "targetNodeId": "348d6e02-395b-4ec2-a812-0b3bedf92343",
         "targetPortIndex": 0
       },
       {
-        "id": "c9f60e73-263f-4dc4-8285-15009ce54b4f",
-        "sourceNodeId": "531079c2-8539-487e-9ae7-ac232fb832b3",
-        "sourcePortIndex": 0,
-        "targetNodeId": "ada2a4f4-79dc-4e41-a08b-64f4172057f1",
-        "targetPortIndex": 0
+        "id": "0eb74822-b539-4f71-b4e7-c8daf6a3d522",
+        "sourceNodeId": "001aa7e6-c766-4573-966d-af76d745196c",
+        "sourcePortIndex": 1,
+        "targetNodeId": "348d6e02-395b-4ec2-a812-0b3bedf92343",
+        "targetPortIndex": 1
       },
       {
-        "id": "4e224e9c-2e29-4de7-9fc5-a4492bb0e034",
-        "sourceNodeId": "dade9fb9-caa9-454d-8d88-e6b06082519b",
-        "sourcePortIndex": 0,
-        "targetNodeId": "4e60b064-ea7a-4b4d-af98-b15d85c287c4",
-        "targetPortIndex": 0
+        "id": "b447a54b-46f9-499b-a9ca-c147f9ea9d0a",
+        "sourceNodeId": "001aa7e6-c766-4573-966d-af76d745196c",
+        "sourcePortIndex": 2,
+        "targetNodeId": "348d6e02-395b-4ec2-a812-0b3bedf92343",
+        "targetPortIndex": 2
       }
     ],
     "annotations": [
       {
         "id": "d46e1e62-574a-4057-a6ed-ca39c247da81",
         "position": {
-          "x": -300,
-          "y": 140
+          "x": -560,
+          "y": 160
         },
         "content": "# Superconducting Magnet Quench\n\nCoupled electro-thermal model with Wilson normal zone propagation.\n\n**3 coupled ODEs:**\n- $L \\cdot dI/dt = -(R_q + R_{dump}) \\cdot I$\n- $C_p(T) \\cdot dT/dt = \\rho(T) \\cdot J^2$  (adiabatic)\n- $dl_{nz}/dt = 2 \\cdot v_{nz}(T, J)$\n\nCoupling: $R_q = \\rho(T) \\cdot l_{nz} / A_{cu}$\n\nTemperature-dependent copper $\\rho(T)$ and $C_p(T)$ drive the nonlinear quench dynamics.",
-        "width": 360,
-        "height": 180,
+        "width": 260,
+        "height": 310,
         "fontSize": 11
-      },
-      {
-        "id": "dd3df53d-030f-4084-b2d5-b6bdea6e4de6",
-        "position": {
-          "x": -80,
-          "y": 310
-        },
-        "content": "coupled 3-state ODE",
-        "width": 160,
-        "height": 30,
-        "fontSize": 10,
-        "color": "#64B5F6"
-      },
-      {
-        "id": "63cd008b-567c-4b55-8f60-9510fcc021b7",
-        "position": {
-          "x": 140,
-          "y": 250
-        },
-        "content": "signal extraction",
-        "width": 130,
-        "height": 30,
-        "fontSize": 10,
-        "color": "#FFA726"
       }
     ]
   },
   "events": [],
   "codeContext": {
-    "code": "import math\n\n# ── Magnet parameters (ITER-like CS module) ──\nL      = 2.0        # coil inductance [H]\nI0     = 40.0       # initial operating current [kA]\nR_dump = 0.2        # external dump resistor [Ohm]\nA_cu   = 2e-4       # copper stabilizer cross-section [m^2]\n\n# ── Initial conditions ──\nT0     = 10.0       # initial hot-spot temperature [K]\nl_nz0  = 0.01       # initial normal zone seed length [m]\n\n# ── Quench trigger ──\nt_quench = 0.5      # quench onset time [s]\n\ndef quench_trigger(t):\n    return 1.0 if t >= t_quench else 0.0\n\n# ── Material properties (copper stabilizer) ──\ndef resistivity(T):\n    \"\"\"Copper resistivity [Ohm·m] — RRR≈100\"\"\"\n    return 2e-10 + 5.5e-11 * T\n\ndef heat_capacity(T):\n    \"\"\"Volumetric heat capacity of Cu [J/(m^3·K)]\"\"\"\n    if T < 30:\n        return 100 * T + 0.01 * T**3\n    return 3.4e6\n\ndef nz_velocity(T, J):\n    \"\"\"Normal zone propagation velocity [m/s]\"\"\"\n    if T < 15:\n        return 0.0\n    return 0.02 * abs(J) / 1e8 * math.sqrt(max(T - 10, 0))\n\n# ── Coupled ODE system ──\ndef quench_ode(x, u, t):\n    \"\"\"\n    x = [I (kA), T (K), l_nz (m)]\n    u = [trigger (0 or 1)]\n    \"\"\"\n    I    = x[0]\n    T    = max(x[1], 4.0)\n    l_nz = max(x[2], 0.001)\n    active = u[0]\n\n    # Current density\n    J = I * 1e3 / A_cu  # [A/m^2]\n\n    # Quench resistance: R_q = rho(T) * l_nz / A_cu\n    rho = resistivity(T)\n    R_q = rho * l_nz / A_cu * active  # zero before quench\n\n    # dI/dt = -(R_q + R_dump) * I / L\n    # I is in kA, so dI/dt in kA/s\n    dI = -(R_q + R_dump) * (I * 1e3) / L / 1e3\n\n    # dT/dt = rho * J^2 / C_p  (adiabatic, only in normal zone)\n    Cp = heat_capacity(T)\n    dT = rho * J**2 / Cp * active\n\n    # dl_nz/dt = 2 * v_nz  (propagates in both directions)\n    v = nz_velocity(T, J)\n    dl = 2 * v * active\n\n    return [dI, dT, dl]\n\n# ── Signal extraction functions ──\ndef get_current(x):\n    return x[0]\n\ndef get_temperature(x):\n    return x[1]\n\ndef get_nz_length(x):\n    return x[2]"
+    "code": "import math\n\n# ── Magnet parameters (ITER-like CS module) ──\nL      = 2.0        # coil inductance [H]\nI0     = 40.0       # initial operating current [kA]\nR_dump = 0.2        # external dump resistor [Ohm]\nA_cu   = 2e-4       # copper stabilizer cross-section [m^2]\n\n# ── Initial conditions ──\nT0     = 10.0       # initial hot-spot temperature [K]\nl_nz0  = 0.01       # initial normal zone seed length [m]\n\n# ── Quench trigger ──\nt_quench = 0.5      # quench onset time [s]\n\ndef quench_trigger(t):\n    return 1.0 if t >= t_quench else 0.0\n\n# ── Material properties (copper stabilizer) ──\ndef resistivity(T):\n    \"\"\"Copper resistivity [Ohm·m] — RRR≈100\"\"\"\n    return 2e-10 + 5.5e-11 * T\n\ndef heat_capacity(T):\n    \"\"\"Volumetric heat capacity of Cu [J/(m^3·K)]\"\"\"\n    if T < 30:\n        return 100 * T + 0.01 * T**3\n    return 3.4e6\n\ndef nz_velocity(T, J):\n    \"\"\"Normal zone propagation velocity [m/s]\"\"\"\n    if T < 15:\n        return 0.0\n    return 0.02 * abs(J) / 1e8 * math.sqrt(max(T - 10, 0))\n\n# ── Coupled ODE system ──\ndef quench_ode(x, u, t):\n    \"\"\"\n    x = [I (kA), T (K), l_nz (m)]\n    u = [trigger (0 or 1)]\n    \"\"\"\n    I    = x[0]\n    T    = max(x[1], 4.0)\n    l_nz = max(x[2], 0.001)\n    active = u[0]\n\n    # Current density\n    J = I * 1e3 / A_cu  # [A/m^2]\n\n    # Quench resistance: R_q = rho(T) * l_nz / A_cu\n    rho = resistivity(T)\n    R_q = rho * l_nz / A_cu * active  # zero before quench\n\n    # dI/dt = -(R_q + R_dump) * I / L\n    # I is in kA, so dI/dt in kA/s\n    dI = -(R_q + R_dump) * (I * 1e3) / L / 1e3\n\n    # dT/dt = rho * J^2 / C_p  (adiabatic, only in normal zone)\n    Cp = heat_capacity(T)\n    dT = rho * J**2 / Cp * active\n\n    # dl_nz/dt = 2 * v_nz  (propagates in both directions)\n    v = nz_velocity(T, J)\n    dl = 2 * v * active\n\n    return np.array([dI, dT, dl])"
   },
   "simulationSettings": {
     "duration": "5",
