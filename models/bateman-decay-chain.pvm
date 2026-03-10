@@ -1,0 +1,529 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created": "2026-03-10T12:00:00.000Z",
+    "modified": "2026-03-10T12:00:00.000Z",
+    "name": "bateman-decay-chain"
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+        "type": "Integrator",
+        "name": "N_A",
+        "position": {
+          "x": 100,
+          "y": 150
+        },
+        "inputs": [
+          {
+            "id": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a-input-0",
+            "nodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a-output-0",
+            "nodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "initial_value": "N0"
+        },
+        "color": "#E57373"
+      },
+      {
+        "id": "76dc6263-adde-4ffb-b7da-cde61195229e",
+        "type": "Amplifier",
+        "name": "-λ_A",
+        "position": {
+          "x": 260,
+          "y": 150
+        },
+        "inputs": [
+          {
+            "id": "76dc6263-adde-4ffb-b7da-cde61195229e-input-0",
+            "nodeId": "76dc6263-adde-4ffb-b7da-cde61195229e",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "76dc6263-adde-4ffb-b7da-cde61195229e-output-0",
+            "nodeId": "76dc6263-adde-4ffb-b7da-cde61195229e",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "gain": "-lambda_A"
+        },
+        "color": "#E57373"
+      },
+      {
+        "id": "5f0fc32a-f095-4e81-acae-952869e14862",
+        "type": "Scope",
+        "name": "species A",
+        "position": {
+          "x": 420,
+          "y": 100
+        },
+        "inputs": [
+          {
+            "id": "5f0fc32a-f095-4e81-acae-952869e14862-input-0",
+            "nodeId": "5f0fc32a-f095-4e81-acae-952869e14862",
+            "name": "N_A",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"N_A\"]"
+        }
+      },
+      {
+        "id": "801407c8-8c6f-4a44-9543-39d305187c8b",
+        "type": "Amplifier",
+        "name": "λ_A",
+        "position": {
+          "x": 100,
+          "y": 320
+        },
+        "inputs": [
+          {
+            "id": "801407c8-8c6f-4a44-9543-39d305187c8b-input-0",
+            "nodeId": "801407c8-8c6f-4a44-9543-39d305187c8b",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "801407c8-8c6f-4a44-9543-39d305187c8b-output-0",
+            "nodeId": "801407c8-8c6f-4a44-9543-39d305187c8b",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "gain": "lambda_A"
+        },
+        "color": "#FFA726"
+      },
+      {
+        "id": "fdf55f10-2439-4b50-bebd-303340a019bc",
+        "type": "Adder",
+        "name": "dN_B/dt",
+        "position": {
+          "x": 240,
+          "y": 370
+        },
+        "inputs": [
+          {
+            "id": "fdf55f10-2439-4b50-bebd-303340a019bc-input-0",
+            "nodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+            "name": "prod",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          },
+          {
+            "id": "fdf55f10-2439-4b50-bebd-303340a019bc-input-1",
+            "nodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+            "name": "decay",
+            "direction": "input",
+            "index": 1,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "fdf55f10-2439-4b50-bebd-303340a019bc-output-0",
+            "nodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "operations": "\"+-\""
+        },
+        "color": "#FFA726"
+      },
+      {
+        "id": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+        "type": "Integrator",
+        "name": "N_B",
+        "position": {
+          "x": 400,
+          "y": 370
+        },
+        "inputs": [
+          {
+            "id": "978bb613-a24d-4b18-b275-fa8a9ec01234-input-0",
+            "nodeId": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "978bb613-a24d-4b18-b275-fa8a9ec01234-output-0",
+            "nodeId": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "initial_value": "0"
+        },
+        "color": "#FFA726"
+      },
+      {
+        "id": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+        "type": "Amplifier",
+        "name": "λ_B",
+        "position": {
+          "x": 560,
+          "y": 370
+        },
+        "inputs": [
+          {
+            "id": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae-input-0",
+            "nodeId": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae-output-0",
+            "nodeId": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "gain": "lambda_B"
+        },
+        "color": "#FFA726"
+      },
+      {
+        "id": "6eeed191-e4e2-4be2-8806-86ca2950843c",
+        "type": "Scope",
+        "name": "species B",
+        "position": {
+          "x": 560,
+          "y": 290
+        },
+        "inputs": [
+          {
+            "id": "6eeed191-e4e2-4be2-8806-86ca2950843c-input-0",
+            "nodeId": "6eeed191-e4e2-4be2-8806-86ca2950843c",
+            "name": "N_B",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"N_B\"]"
+        }
+      },
+      {
+        "id": "c19f5ef2-c869-4e93-b455-319b9925876c",
+        "type": "Integrator",
+        "name": "N_C",
+        "position": {
+          "x": 400,
+          "y": 550
+        },
+        "inputs": [
+          {
+            "id": "c19f5ef2-c869-4e93-b455-319b9925876c-input-0",
+            "nodeId": "c19f5ef2-c869-4e93-b455-319b9925876c",
+            "name": "in 0",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "c19f5ef2-c869-4e93-b455-319b9925876c-output-0",
+            "nodeId": "c19f5ef2-c869-4e93-b455-319b9925876c",
+            "name": "out 0",
+            "direction": "output",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "params": {
+          "initial_value": "0"
+        },
+        "color": "#81C784"
+      },
+      {
+        "id": "7a7f3c04-c325-4c89-9761-febe23defbbb",
+        "type": "Scope",
+        "name": "species C",
+        "position": {
+          "x": 560,
+          "y": 550
+        },
+        "inputs": [
+          {
+            "id": "7a7f3c04-c325-4c89-9761-febe23defbbb-input-0",
+            "nodeId": "7a7f3c04-c325-4c89-9761-febe23defbbb",
+            "name": "N_C",
+            "direction": "input",
+            "index": 0,
+            "color": "#969696"
+          }
+        ],
+        "outputs": [],
+        "params": {
+          "labels": "[\"N_C\"]"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "id": "1724939c-4dad-4df2-8c3b-bee7b78e6ae6",
+        "sourceNodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+        "sourcePortIndex": 0,
+        "targetNodeId": "76dc6263-adde-4ffb-b7da-cde61195229e",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "b31196d1-29d2-48e3-bd55-d90925520733",
+        "sourceNodeId": "76dc6263-adde-4ffb-b7da-cde61195229e",
+        "sourcePortIndex": 0,
+        "targetNodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+        "targetPortIndex": 0,
+        "waypoints": [
+          {
+            "id": "dec0b3af-efc7-4630-8b13-8aaabb3042f0",
+            "position": {
+              "x": 320,
+              "y": 70
+            },
+            "isUserWaypoint": true
+          },
+          {
+            "id": "43cea6ad-6b70-47b5-81a1-09ea2526bf87",
+            "position": {
+              "x": 40,
+              "y": 70
+            },
+            "isUserWaypoint": true
+          }
+        ]
+      },
+      {
+        "id": "0af64bf3-6455-4236-8145-da59a59bf25a",
+        "sourceNodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+        "sourcePortIndex": 0,
+        "targetNodeId": "5f0fc32a-f095-4e81-acae-952869e14862",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "7441e033-145f-4a9e-b2dc-8f6be8af2be0",
+        "sourceNodeId": "fb89c2a0-3649-4e3d-bd3d-584098d1c44a",
+        "sourcePortIndex": 0,
+        "targetNodeId": "801407c8-8c6f-4a44-9543-39d305187c8b",
+        "targetPortIndex": 0,
+        "waypoints": [
+          {
+            "id": "af077e52-739e-4a9c-b168-7d56635b6daf",
+            "position": {
+              "x": 40,
+              "y": 250
+            },
+            "isUserWaypoint": true
+          }
+        ]
+      },
+      {
+        "id": "141b520e-9d32-45c9-8c77-f0ae079df824",
+        "sourceNodeId": "801407c8-8c6f-4a44-9543-39d305187c8b",
+        "sourcePortIndex": 0,
+        "targetNodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "3f2e4307-190e-49d3-a050-33059c934678",
+        "sourceNodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+        "sourcePortIndex": 0,
+        "targetNodeId": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "53414d42-2e98-42ad-9ddb-2bf73f72a142",
+        "sourceNodeId": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+        "sourcePortIndex": 0,
+        "targetNodeId": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "825801e7-0a7b-4171-aca4-66890d254ee0",
+        "sourceNodeId": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+        "sourcePortIndex": 0,
+        "targetNodeId": "fdf55f10-2439-4b50-bebd-303340a019bc",
+        "targetPortIndex": 1,
+        "waypoints": [
+          {
+            "id": "a5c74319-2d29-4f70-93a8-fba14debd884",
+            "position": {
+              "x": 620,
+              "y": 440
+            },
+            "isUserWaypoint": true
+          },
+          {
+            "id": "ec086cf5-1010-406d-851d-74237c8a7fc6",
+            "position": {
+              "x": 180,
+              "y": 440
+            },
+            "isUserWaypoint": true
+          }
+        ]
+      },
+      {
+        "id": "57904e07-c195-4b0f-8f58-7aacae485d64",
+        "sourceNodeId": "978bb613-a24d-4b18-b275-fa8a9ec01234",
+        "sourcePortIndex": 0,
+        "targetNodeId": "6eeed191-e4e2-4be2-8806-86ca2950843c",
+        "targetPortIndex": 0
+      },
+      {
+        "id": "170a2ce2-d906-4ffc-9da7-6fb398d68333",
+        "sourceNodeId": "8387f4f5-0e81-4595-8c30-3bf6f02c84ae",
+        "sourcePortIndex": 0,
+        "targetNodeId": "c19f5ef2-c869-4e93-b455-319b9925876c",
+        "targetPortIndex": 0,
+        "waypoints": [
+          {
+            "id": "1a549c0d-85f5-403f-ac26-b152b39d57c7",
+            "position": {
+              "x": 620,
+              "y": 490
+            },
+            "isUserWaypoint": true
+          },
+          {
+            "id": "ee94325a-c61a-4ee6-a178-836bc9e3f624",
+            "position": {
+              "x": 340,
+              "y": 490
+            },
+            "isUserWaypoint": true
+          }
+        ]
+      },
+      {
+        "id": "8cf49190-8896-4ce0-bbdd-32bbca43fa39",
+        "sourceNodeId": "c19f5ef2-c869-4e93-b455-319b9925876c",
+        "sourcePortIndex": 0,
+        "targetNodeId": "7a7f3c04-c325-4c89-9761-febe23defbbb",
+        "targetPortIndex": 0
+      }
+    ],
+    "annotations": [
+      {
+        "id": "65179c74-2369-47c9-a278-023d159eeb26",
+        "position": {
+          "x": 60,
+          "y": 50
+        },
+        "content": "# Bateman Equations\n\nSequential radioactive decay chain: **A → B → C**\nClassic nuclear engineering model for isotope transmutation and activation.",
+        "width": 360,
+        "height": 80,
+        "fontSize": 11
+      },
+      {
+        "id": "faaf9d59-7539-406f-a606-10729861e629",
+        "position": {
+          "x": 60,
+          "y": 130
+        },
+        "content": "parent isotope (A)",
+        "width": 140,
+        "height": 35,
+        "fontSize": 10,
+        "color": "#E57373"
+      },
+      {
+        "id": "428b6bca-b3dd-4b6f-ad70-199a63cb7c81",
+        "position": {
+          "x": 200,
+          "y": 330
+        },
+        "content": "daughter isotope (B)",
+        "width": 150,
+        "height": 35,
+        "fontSize": 10,
+        "color": "#FFA726"
+      },
+      {
+        "id": "1d2496a7-ae42-4b15-9bc7-f15fa6f40fb2",
+        "position": {
+          "x": 360,
+          "y": 510
+        },
+        "content": "granddaughter (C)",
+        "width": 140,
+        "height": 35,
+        "fontSize": 10,
+        "color": "#81C784"
+      }
+    ]
+  },
+  "events": [],
+  "codeContext": {
+    "code": "# Decay chain: A -> B -> C\n# Half-lives determine decay constants\nimport math\n\nt_half_A = 5.0     # half-life of A [s]\nt_half_B = 8.0     # half-life of B [s]\n\nlambda_A = math.log(2) / t_half_A   # decay constant A\nlambda_B = math.log(2) / t_half_B   # decay constant B\n\nN0 = 1000          # initial atoms of A"
+  },
+  "simulationSettings": {
+    "duration": "40",
+    "dt": "0.1",
+    "solver": "RKCK54",
+    "adaptive": true,
+    "atol": null,
+    "rtol": null,
+    "ftol": null,
+    "dt_min": null,
+    "dt_max": null,
+    "ghostTraces": 0,
+    "plotResults": true
+  }
+}
